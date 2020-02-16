@@ -11,17 +11,20 @@ import java.util.Locale;
 
 @Configuration
 public class DateFormatConfiguration {
+
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
     @Bean
     public Formatter<LocalDate> localDateFormatter() {
         return new Formatter<LocalDate>() {
             @Override
             public LocalDate parse(String text, Locale locale) throws ParseException {
-                return LocalDate.parse(text, DateTimeFormatter.ISO_DATE);
+                return LocalDate.parse(text, FORMATTER);//do stalej ctr;+alt+c
             }
 
             @Override
             public String print(LocalDate object, Locale locale) {
-                return DateTimeFormatter.ISO_DATE.format(object);
+                return FORMATTER.format(object);
             }
         };
     }
