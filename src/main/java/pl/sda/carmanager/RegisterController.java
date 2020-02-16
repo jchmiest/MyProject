@@ -36,7 +36,7 @@ public class RegisterController {
 
         //ascenting-sortowanie rosnace
         Integer result= 0;
-        for (int i = 0; i < fuelentries.size(); i++) {//lista
+        for (int i = 0; i < 2; i++) {//lista
 
           FuelEntity entity1=   fuelentries.get(i); //pobranie konkretnej rzeczy w liscie,index 0
           FuelEntity entity2=   fuelentries.get(i+1);// nastepny counter,pobranie,index 1,poranie obiektu z listy
