@@ -1,6 +1,7 @@
 package pl.sda.carmanager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,7 +27,7 @@ public class RegisterController {
 
     @GetMapping("/show")//wyswietli to co dodam,wysiwtela formularz carform1
     public ModelAndView getShowRegister() {
-        List<FuelEntity> fuelentries = fuelRepository.findAll();
+        List<FuelEntity> fuelentries = fuelRepository.findAll(Sort.by(Sort.Direction.ASC,"date"));
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("registerview");//wpisujemy co ma wyswietlic
         modelAndView.getModel().put("register", fuelentries);
