@@ -17,6 +17,7 @@
                 <div th:each="prd: ${register}">
                     <div style="background-color: aqua" th:text="${prd.id}"></div>
 
+
                     <div style="background-color: aqua" th:text="Licznik"></div>
                     <div style="background-color: chartreuse" th:text="${prd.counter}"></div>
 
@@ -26,8 +27,8 @@
                     <div style="background-color: chartreuse" th:text="${prd.date}"></div>
                     <div style="background-color: aqua" th:text="Koszt"></div>
                     <div style="background-color: chartreuse" th:text="${prd.cost}"></div>
-                    <div style="background-color: aqua" th:text="Przejechane kilometry"></div>
-                    <div style="background-color: chartreuse" th:text="${result}"></div>
+                    <div style="background-color: aqua">Przejechane kilometry</div>
+                    <div style="background-color: chartreuse" th:text="${prd.difference}"></div>
                 </div>
 
 

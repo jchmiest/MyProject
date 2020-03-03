@@ -1,4 +1,4 @@
-package pl.sda.carmanager;
+package pl.sda.carmanager.entity;
 
 import javax.persistence.*;
 

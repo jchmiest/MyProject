@@ -1,36 +1,25 @@
-package pl.sda.carmanager;
+package pl.sda.carmanager.web;
 
-import javax.persistence.*;
+
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
-@Table(name="fuel_table")
-public class FuelEntity {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+public class RegistryEntry {
     private Integer id;
-    @Column(name="counter") // wszystkie moga miec name
     private Integer counter;
-    @Column(name="litre")
     private Integer litre;
-    @Column(name="date")
-    private LocalDate date;
-    @Column(name="price")
-    private BigDecimal price;
-    @Column(name="cost")
-    private BigDecimal cost;
 
-    public FuelEntity() {
-    }
-
-    public Integer getId() { //brakowalo set i get i nie ustawial danych
+    public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
+
+    private LocalDate date;
+    private BigDecimal price;
 
     public Integer getCounter() {
         return counter;
@@ -71,4 +60,15 @@ public class FuelEntity {
     public void setCost(BigDecimal cost) {
         this.cost = cost;
     }
+
+    public Integer getDifference() {
+        return difference;
+    }
+
+    public void setDifference(Integer difference) {
+        this.difference = difference;
+    }
+
+    private BigDecimal cost;
+    private Integer difference;
 }
